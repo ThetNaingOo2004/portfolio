@@ -22,8 +22,8 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/thet-naing-oo-7393ba28a',
   linkedinHandle: 'thet-naing-oo',
   // Use "./assets/..." if deploying to /portfolio/ on GitHub Pages
-  profileImage: './assets/profile.png',
-  cvUrl: './assets/ThetNaingOo_CV.pdf',
+  profileImage: './assets/profile-placeholder.svg',
+  cvUrl: null,
 };
 
 export const aboutContent = {
@@ -87,9 +87,9 @@ export const skillCategories = [
   {
     id: 'tools',
     index: '06',
-    title: 'Tools & Workflow',
-    note: 'Version control, local server environments, and day-to-day development setup.',
-    items: ['Git', 'GitHub', 'VS Code', 'XAMPP'],
+    title: 'Tools & Deployment',
+    note: 'Version control, local testing environments, and self-managed live hosting.',
+    items: ['Git', 'GitHub', 'VS Code', 'XAMPP', 'Namecheap / cPanel', 'Website Deployment'],
   },
 ];
 
@@ -157,23 +157,29 @@ export const capabilities = [
   {
     id: 'workflow-tools',
     number: '04',
-    title: 'Development Workflow & Tools',
-    eyebrow: 'Build, Debug & Maintain',
+    title: 'Development Workflow, Deployment & Tools',
+    eyebrow: 'Build, Deploy & Maintain',
     summary:
-      'I use development tools to build, debug, manage, and maintain projects efficiently from local testing to live deployment.',
+      'I manage projects from local development to live production—handling version control, hosting setup, domain configuration, and ongoing maintenance.',
     deliverables: [
-      'Version control & collaborative repositories',
-      'Local server & database testing environments',
-      'Structured debugging and troubleshooting',
+      'Self-managed web hosting & live deployment on Namecheap',
+      'Domain, DNS, SSL, and production MySQL database setup',
+      'Version control & collaborative repositories (Git & GitHub)',
+      'Local server testing, debugging, and troubleshooting',
     ],
     technologies: [
+      'Namecheap Hosting / cPanel',
+      'Website Deployment',
       'Git & GitHub',
       'VS Code',
       'XAMPP',
-      'Local development environments',
-      'Debugging and troubleshooting',
+      'Debugging & Troubleshooting',
     ],
-    relatedProjects: [],
+    relatedProjects: [
+      { title: "Myanmar Da'wah Center", href: '#projects' },
+      { title: 'Afaaf Store', href: '#projects' },
+      { title: 'Vanta Tech', href: '#projects' },
+    ],
     accent: 'light',
   },
 ];

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, Check } from 'lucide-react';
+import { ArrowUpRight, Github, Check, ChevronDown } from 'lucide-react';
 import SectionHeader from './ui/SectionHeader';
 import ProjectVisual from './ProjectVisual';
 import { projects } from '../data/portfolioData';
@@ -83,6 +83,7 @@ function ProjectMeta({ project }) {
 }
 
 export default function Projects() {
+  const [showAllMobile, setShowAllMobile] = useState(false);
   const [featured, second, third, fourth] = projects;
 
   return (
@@ -95,7 +96,7 @@ export default function Projects() {
         />
 
         <div className="space-y-8">
-          {/* 01 — Full-Width Editorial Feature */}
+          {/* 01 — Always visible on mobile & desktop */}
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,50 +112,71 @@ export default function Projects() {
             </div>
           </motion.article>
 
-          {/* 02 & 03 — Asymmetric Split Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* 02, 03 & 04 — Hidden on mobile until expanded; always visible on md+ */}
+          <div className={`${showAllMobile ? 'block' : 'hidden md:block'} space-y-8`}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.45 }}
+                className="lg:col-span-7 bg-white border border-navy-900/12 rounded-2xl overflow-hidden shadow-card flex flex-col"
+              >
+                <ProjectVisual project={second} />
+                <div className="p-6 sm:p-8 flex-1">
+                  <ProjectMeta project={second} />
+                </div>
+              </motion.article>
+
+              <motion.article
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.45, delay: 0.08 }}
+                className="lg:col-span-5 bg-white border border-navy-900/12 rounded-2xl overflow-hidden shadow-card flex flex-col"
+              >
+                <ProjectVisual project={third} />
+                <div className="p-6 sm:p-8 flex-1">
+                  <ProjectMeta project={third} />
+                </div>
+              </motion.article>
+            </div>
+
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.45 }}
-              className="lg:col-span-7 bg-white border border-navy-900/12 rounded-2xl overflow-hidden shadow-card flex flex-col"
+              className="grid grid-cols-1 lg:grid-cols-12 bg-ice-50 border border-navy-900/12 rounded-2xl overflow-hidden shadow-card"
             >
-              <ProjectVisual project={second} />
-              <div className="p-6 sm:p-8 flex-1">
-                <ProjectMeta project={second} />
+              <div className="lg:col-span-5">
+                <ProjectVisual project={fourth} />
               </div>
-            </motion.article>
-
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.45, delay: 0.08 }}
-              className="lg:col-span-5 bg-white border border-navy-900/12 rounded-2xl overflow-hidden shadow-card flex flex-col"
-            >
-              <ProjectVisual project={third} />
-              <div className="p-6 sm:p-8 flex-1">
-                <ProjectMeta project={third} />
+              <div className="lg:col-span-7 p-6 sm:p-9">
+                <ProjectMeta project={fourth} />
               </div>
             </motion.article>
           </div>
+        </div>
 
-          {/* 04 — Wide Reversed Showcase */}
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.45 }}
-            className="grid grid-cols-1 lg:grid-cols-12 bg-ice-50 border border-navy-900/12 rounded-2xl overflow-hidden shadow-card"
+        {/* Mobile-only Circular Dropdown Button */}
+        <div className="mt-8 flex flex-col items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAllMobile((prev) => !prev)}
+            aria-expanded={showAllMobile}
+            aria-label={showAllMobile ? 'Show fewer projects' : 'Show all projects'}
+            className="w-12 h-12 rounded-full bg-navy-900 text-ice-50 hover:bg-navy-800 shadow-editorial inline-flex items-center justify-center transition-colors"
           >
-            <div className="lg:col-span-5">
-              <ProjectVisual project={fourth} />
-            </div>
-            <div className="lg:col-span-7 p-6 sm:p-9">
-              <ProjectMeta project={fourth} />
-            </div>
-          </motion.article>
+            <ChevronDown
+              className={`w-5 h-5 transition-transform duration-300 ${
+                showAllMobile ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+          <span className="font-mono text-[11px] uppercase tracking-wider text-slateink">
+            {showAllMobile ? 'Show less' : `View ${projects.length - 1} more`}
+          </span>
         </div>
       </div>
     </section>
