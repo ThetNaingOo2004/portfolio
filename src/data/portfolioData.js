@@ -15,15 +15,15 @@ export const personalInfo = {
   academicLevel: 'Third Year, Second Semester',
   expectedGraduation: 'February 2028',
   // Replace with your preferred email address
-  email: 'thetnaingoo1224@gmail.com',
+  email: 'thetnaingoo.contact@example.com',
   emailIsPlaceholder: true,
   github: 'https://github.com/ThetNaingOo2004',
   githubHandle: 'ThetNaingOo2004',
   linkedin: 'https://www.linkedin.com/in/thet-naing-oo-7393ba28a',
   linkedinHandle: 'thet-naing-oo',
-  // Replace with "/assets/profile.jpg" after adding your photo in public/assets/
-  profileImage: '/assets/profile.png',
-  cvUrl: '/assets/ThetNaingOo_CV.pdf',
+  // Use "./assets/..." if deploying to /portfolio/ on GitHub Pages
+  profileImage: './assets/profile-placeholder.svg',
+  cvUrl: null,
 };
 
 export const aboutContent = {
@@ -90,94 +90,6 @@ export const skillCategories = [
     title: 'Tools & Workflow',
     note: 'Version control, local server environments, and day-to-day development setup.',
     items: ['Git', 'GitHub', 'VS Code', 'XAMPP'],
-  },
-];
-
-export const projects = [
-  {
-    id: 'myanmar-dawah',
-    number: '01',
-    title: "Myanmar Da'wah Center",
-    category: 'Community Web Platform',
-    context: 'Live Production Platform',
-    overview:
-      'A community-focused Islamic platform designed to provide structured educational resources and facilitate meaningful community engagement across events and Q&A.',
-    features: [
-      'Islamic events listing & scheduling',
-      'Community Q&A portal',
-      'Subscriber notifications',
-      'Organized community resources',
-    ],
-    tech: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-    liveUrl: 'https://myanmardawah.com',
-    githubUrl: null,
-    image: null,
-    visualType: 'dawah',
-    layout: 'featured',
-  },
-  {
-    id: 'afaaf-store',
-    number: '02',
-    title: 'Afaaf Store',
-    category: 'E-Commerce & POS System',
-    context: 'Previous Project',
-    overview:
-      'An end-to-end e-commerce and point-of-sale platform developed for modest fashion products, unifying storefront checkout with live inventory and automated order alerts.',
-    features: [
-      'Product management',
-      'Inventory management',
-      'Product variants',
-      'Online checkout',
-      'Telegram order notifications',
-    ],
-    tech: ['PHP', 'MySQL', 'JavaScript', 'Tailwind CSS'],
-    liveUrl: 'https://afaaf.store',
-    githubUrl: null,
-    image: null,
-    visualType: 'afaaf',
-    layout: 'split-left',
-  },
-  {
-    id: 'vanta-tech',
-    number: '03',
-    title: 'Vanta Tech',
-    category: 'Digital & Educational Services',
-    context: 'Web Presence',
-    overview:
-      'A technology and educational services website focused on clearly presenting digital service offerings and educational initiatives with fast, lightweight frontend delivery.',
-    features: [
-      'Clear presentation of digital services',
-      'Educational offerings showcase',
-      'Responsive multi-device layout',
-    ],
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://vantatech.site',
-    githubUrl: null,
-    image: null,
-    visualType: 'vanta',
-    layout: 'split-right',
-  },
-  {
-    id: 'expense-tracker',
-    number: '04',
-    title: 'Expense Tracker',
-    category: 'Personal Finance Application',
-    context: 'Full-Stack Web Application',
-    overview:
-      'A personal finance management application built to record, filter, and audit income and expenses with secure user accounts and exportable financial statements.',
-    features: [
-      'Income and expense tracking',
-      'User authentication',
-      'Transaction management',
-      'Multi-criteria filtering',
-      'PDF export',
-    ],
-    tech: ['PHP', 'MySQL', 'Tailwind CSS'],
-    liveUrl: 'https://vantatech.site/expense-tracker',
-    githubUrl: null,
-    image: null,
-    visualType: 'expense',
-    layout: 'wide',
   },
 ];
 
@@ -266,6 +178,117 @@ export const capabilities = [
   },
 ];
 
+export const projects = [
+  {
+    id: 'myanmar-dawah',
+    number: '01',
+    title: "Myanmar Da'wah Center",
+    category: 'Community Web Platform',
+    context: 'Live Production Platform',
+    overview:
+      'A community-focused Islamic platform designed to provide structured educational resources and facilitate meaningful community engagement across events and Q&A.',
+    features: [
+      'Islamic events listing & scheduling',
+      'Community Q&A portal',
+      'Subscriber notifications',
+      'Organized community resources',
+    ],
+    tech: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
+    liveUrl: 'https://myanmardawah.com',
+    githubUrl: null,
+    image: null,
+    visualType: 'dawah',
+    layout: 'featured',
+  },
+  {
+    id: 'afaaf-store',
+    number: '02',
+    title: 'Afaaf Store',
+    category: 'E-Commerce & POS System',
+    context: 'Previous Project',
+    overview:
+      'An end-to-end e-commerce and point-of-sale platform developed for modest fashion products, unifying storefront checkout with live inventory and automated order alerts.',
+    features: [
+      'Product management',
+      'Inventory management',
+      'Product variants',
+      'Online checkout',
+      'Telegram order notifications',
+    ],
+    tech: ['PHP', 'MySQL', 'JavaScript', 'Tailwind CSS'],
+    liveUrl: 'https://afaaf.store',
+    githubUrl: null,
+    image: null,
+    visualType: 'afaaf',
+    layout: 'split-left',
+  },
+  {
+    id: 'vanta-tech',
+    number: '03',
+    title: 'Vanta Tech',
+    category: 'Digital & Educational Services',
+    context: 'Web Presence',
+    overview:
+      'A technology and educational services website focused on clearly presenting digital service offerings and educational initiatives with fast, lightweight frontend delivery.',
+    features: [
+      'Clear presentation of digital services',
+      'Educational offerings showcase',
+      'Responsive multi-device layout',
+    ],
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: 'https://vantatech.site',
+    githubUrl: null,
+    image: null,
+    visualType: 'vanta',
+    layout: 'split-right',
+  },
+  {
+    id: 'expense-tracker',
+    number: '04',
+    title: 'Expense Tracker',
+    category: 'Personal Finance Application',
+    context: 'Full-Stack Web Application',
+    overview:
+      'A personal finance management application built to record, filter, and audit income and expenses with secure user accounts and exportable financial statements.',
+    features: [
+      'Income and expense tracking',
+      'User authentication',
+      'Transaction management',
+      'Multi-criteria filtering',
+      'PDF export',
+    ],
+    tech: ['PHP', 'MySQL', 'Tailwind CSS'],
+    liveUrl: null,
+    githubUrl: null,
+    image: null,
+    visualType: 'expense',
+    layout: 'wide',
+  },
+];
+
+export const educationList = [
+  {
+    institution: 'Kasem Bundit University',
+    location: 'Thailand',
+    credential: 'Bachelor of Science in Digital Technology & Innovation',
+    period: 'Expected Graduation: February 2028',
+    status: 'Third Year, Second Semester',
+    metric: 'GPA: 3.62 / 4.00',
+    details:
+      'Coursework focused on software development, web technologies, databases, algorithms, and analytical problem-solving.',
+  },
+  {
+    institution: 'KMD Institute',
+    location: 'Web Development Program',
+    credential: 'Diploma in Web Development',
+    period: '2023',
+    status: 'Completed',
+    metric: null,
+    details:
+      'Foundational training in full-stack web design, database-backed development, and practical project delivery.',
+  },
+];
+
 export const certificationsList = [
   {
     title: 'Data Science with Python',
@@ -333,7 +356,7 @@ export const researchInterests = [
 
 export const navLinks = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Capabilities', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Education', href: '#education' },
   { label: 'Interests', href: '#interests' },
