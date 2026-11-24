@@ -22,8 +22,8 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/thet-naing-oo-7393ba28a',
   linkedinHandle: 'thet-naing-oo',
   // Use "./assets/..." if deploying to /portfolio/ on GitHub Pages
-  profileImage: './assets/profile.png',
-  cvUrl: './assets/ThetNaingOo_CV.pdf'
+  profileImage: './assets/profile-placeholder.svg',
+  cvUrl: null,
 };
 
 export const aboutContent = {
@@ -269,6 +269,40 @@ export const projects = [
     image: null,
     visualType: 'expense',
     layout: 'wide',
+  },
+];
+
+export const academicProjects = [
+  {
+    id: 'se-coursework',
+    course: 'Software Engineering',
+    format: 'Documentation & System Design',
+    status: 'In Progress',
+    summary:
+      'Formal software engineering documentation covering requirements analysis, system architecture, and structured design specifications.',
+    deliverables: ['SRS Documentation', 'System Diagrams', 'Architecture Planning'],
+    // Keep null while repo is private; paste your GitHub repo URL once public
+    githubUrl: null,
+  },
+  {
+    id: 'special-topic-app-dev',
+    course: 'Special Topic in Application Development',
+    format: 'Practical Implementation',
+    status: 'In Progress',
+    summary:
+      'Hands-on application development project focused on practical software engineering, feature implementation, and clean architecture.',
+    deliverables: ['Application Build', 'Feature Implementation', 'Testing'],
+    githubUrl: null,
+  },
+  {
+    id: 'dti-innovation-project',
+    course: 'Digital Technology Innovation Project',
+    format: 'Research Paper + Practical Build',
+    status: 'In Progress',
+    summary:
+      'Combined academic research and practical software development project exploring technology-driven solutions.',
+    deliverables: ['Research Paper', 'Working Prototype', 'Technical Evaluation'],
+    githubUrl: null,
   },
 ];
 

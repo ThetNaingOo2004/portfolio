@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, Check, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Github, Check, ChevronDown, Lock } from 'lucide-react';
 import SectionHeader from './ui/SectionHeader';
 import ProjectVisual from './ProjectVisual';
-import { projects } from '../data/portfolioData';
+import { projects, academicProjects } from '../data/portfolioData';
 
 function ProjectMeta({ project }) {
   return (
@@ -177,6 +177,89 @@ export default function Projects() {
           <span className="font-mono text-[11px] uppercase tracking-wider text-slateink">
             {showAllMobile ? 'Show less' : `View ${projects.length - 1} more`}
           </span>
+        </div>
+
+        {/* Academic & In-Progress Coursework Subsection */}
+        <div className="mt-16 pt-12 border-t border-navy-900/12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-cobalt-600 mb-1.5">
+                Current Semester · Kasem Bundit University
+              </p>
+              <h3 className="font-display text-2xl font-extrabold tracking-tight text-navy-900">
+                Academic & In-Progress Projects
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm text-slateink max-w-sm">
+              Repositories are kept private during the active semester and will be published upon completion.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {academicProjects.map((item, idx) => (
+              <motion.article
+                key={item.id}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                className="bg-ice-50 border border-navy-900/10 rounded-2xl p-6 flex flex-col justify-between shadow-card"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-mono text-[11px] text-cobalt-600 font-medium">
+                      {item.format}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white text-navy-900 border border-navy-900/15">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cobalt-600" />
+                      {item.status}
+                    </span>
+                  </div>
+
+                  <h4 className="font-display text-lg font-bold text-navy-900 leading-snug mb-2.5">
+                    {item.course}
+                  </h4>
+
+                  <p className="text-xs sm:text-sm text-slateink leading-relaxed mb-5">
+                    {item.summary}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-navy-900/10 flex items-center justify-between gap-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.deliverables.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-navy-900/80 border border-navy-900/10"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {item.githubUrl ? (
+                    <a
+                      href={item.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-navy-900 hover:text-cobalt-600 shrink-0"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      Repo
+                    </a>
+                  ) : (
+                    <span
+                      className="inline-flex items-center gap-1 font-mono text-[11px] text-navy-900/45 shrink-0"
+                      title="Repository is private during the active semester"
+                    >
+                      <Lock className="w-3 h-3" />
+                      Private
+                    </span>
+                  )}
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
