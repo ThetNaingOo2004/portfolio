@@ -1,4 +1,5 @@
 # Thet Naing Oo — Personal Portfolio Website
+https://thetnaingoo2004.github.io/portfolio/
 
 A responsive, editorial personal portfolio built with **React**, **Vite**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 
