@@ -15,7 +15,7 @@ export const personalInfo = {
   academicLevel: 'Third Year, Second Semester',
   expectedGraduation: 'February 2028',
   // Replace with your preferred email address
-  email: 'thetnaingoo.contact@example.com',
+  email: 'thetnaingoo1224@gmail.com',
   emailIsPlaceholder: true,
   github: 'https://github.com/ThetNaingOo2004',
   githubHandle: 'ThetNaingOo2004',
