@@ -102,31 +102,25 @@ export default function CVModal({ isOpen, onClose }) {
 
           <div>
             <h4 className="font-mono text-xs uppercase tracking-widest text-cobalt-600 mb-3">
-              Certifications
+              Skills & Certifications
             </h4>
-            <ul className="space-y-1.5 text-sm">
-              {certificationsList.map((cert) => (
-                <li key={cert.title} className="flex justify-between gap-4">
-                  <span>
-                    <strong>{cert.title}</strong> — {cert.issuer}
-                  </span>
-                  <span className="font-mono text-xs text-slateink">{cert.year}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-mono text-xs uppercase tracking-widest text-cobalt-600 mb-3">
-              Technical Skills
-            </h4>
-            <div className="space-y-1.5 text-xs sm:text-sm">
+            <div className="space-y-2 text-xs sm:text-sm leading-relaxed">
               {skillCategories.map((cat) => (
                 <p key={cat.id}>
                   <strong className="text-navy-900">{cat.title}:</strong>{' '}
-                  <span className="text-slateink">{cat.items.join(', ')}</span>
+                  <span className="text-slateink">
+                    {cat.text || cat.items.join(', ')}
+                  </span>
                 </p>
               ))}
+              <p>
+                <strong className="text-navy-900">Certifications & Training:</strong>{' '}
+                <span className="text-slateink">
+                  {certificationsList
+                    .map((cert) => `${cert.title}, ${cert.issuer} (${cert.year})`)
+                    .join('; ')}
+                </span>
+              </p>
             </div>
           </div>
 
