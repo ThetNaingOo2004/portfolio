@@ -23,7 +23,7 @@ export const personalInfo = {
   linkedinHandle: 'thet-naing-oo',
   // Use "./assets/..." if deploying to /portfolio/ on GitHub Pages
   profileImage: './assets/profile.png',
-  cvUrl: './assets/ThetNaingOo_CV.pdf',
+  cvUrl: './assets/Thet_Naing_Oo_CV.pdf',
 };
 
 export const aboutContent = {
