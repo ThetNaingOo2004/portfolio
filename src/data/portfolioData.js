@@ -305,6 +305,16 @@ export const academicProjects = [
     deliverables: ['Research Paper', 'Working Prototype', 'Technical Evaluation'],
     githubUrl: null,
   },
+  {
+    id: 'dsa-coursework',
+    course: 'Data Structures & Algorithms',
+    format: 'Practical Implementation',
+    status: 'In Progress',
+    summary:
+      'Practical coursework focused on implementing core data structures, analyzing time and space complexity, and solving algorithmic problems.',
+    deliverables: ['Data Structures', 'Algorithmic Problem-Solving', 'Complexity Analysis'],
+    githubUrl: null,
+  },
 ];
 
 export const educationList = [

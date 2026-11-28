@@ -195,7 +195,7 @@ export default function Projects() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {academicProjects.map((item, idx) => (
               <motion.article
                 key={item.id}
